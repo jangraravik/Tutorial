@@ -1,0 +1,22 @@
+<html>
+<head>
+<Script Language="JavaScript">
+
+
+function propLiveView(item) {
+	var openlink = document.getElementById("myLiveLink").getAttribute("href");
+	var load = window.open(openlink,'','scrollbars=yes,menubar=no,height=768,width=1024,resizable=yes,toolbar=no,location=no,status=no,left=350,top=100');
+	return false;
+}
+
+
+</Script>
+</head>
+<body>
+
+<p>
+	<a onclick="return propLiveView(this);" id="myLiveLink" href="https://www.google.co.in/">Click for Live view</a>
+</p>
+
+</body>
+</html>
