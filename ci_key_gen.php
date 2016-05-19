@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Generate an encryption key for CodeIgniter.
  * http://codeigniter.com/user_guide/libraries/encryption.html
  */
+ 
 function generate_token ($len = 32){
 	$chars = array(
 		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -21,6 +23,7 @@ function generate_token ($len = 32){
 	}
 return $token;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
