@@ -1,0 +1,36 @@
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+.showMore {color:#0770ED;cursor:pointer;}
+.showLess {color:#0770ED;cursor:pointer;}
+.moreless {list-style-type:none;}
+</style>
+<ul class="applyShowMoreLess">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>
+<li>Item 5</li>
+<li>Item 6</li>
+<li>Item 7</li>
+<li>Item 8</li>
+<li>Item 9</li>
+<li>Item 10</li>
+<li>Item 11</li>
+<li>Item 12</li>
+</ul>
+<script>
+$('.applyShowMoreLess').each(function(){
+    var max = 4;
+    if ($(this).find('li').length > max) {
+        $(this).find('li:gt('+max+')').hide().end().append('<li class="moreless"><span class="showMore">more...</span></li>');
+        $('.moreless').click( function(){
+            $(this).siblings(':gt('+max+')').toggle();
+            if ( $('.showMore').length ) {
+                $(this).html('<span class="showLess">less</span>');
+            } else {
+                $(this).html('<span class="showMore">more...</span>');
+            };
+        });
+    };
+});
+</script>
