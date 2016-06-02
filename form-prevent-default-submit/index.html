@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prevent form default submit</title>
+</head>
+
+<body>
+<form method="post" action="process.php">
+<p><input type="text" name="name" placeholder="Name"></p>
+<p><input type="text" name="email" placeholder="Email"></p>
+<p><input type="submit" name="action" id="action" value="Send"></p>
+</form>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+$(function(){
+
+  $("#action").click(function(event){
+	event.preventDefault();
+  });
+  
+});
+</script>
+</body>
+</html>
