@@ -1,0 +1,8 @@
+<a href="skype:profile_name?action">Skype click Link</a>
+action = call
+action = chat
+action = voicemail
+action = sendfile
+action = add
+action = userinfo
+
