@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Play Pause</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("#playpause").click(function(){
+	var imgsrc = $(this).attr('src');
+	//alert(imgsrc);
+	if(imgsrc == 'play.jpg'){
+		$(this).attr('src', 'pause.jpg');
+	} else {
+		$(this).attr('src', 'play.jpg');
+	}
+	});
+	
+});
+</script>
+</head>
+
+<body>
+<img id="playpause" src="play.jpg">
+</body>
+</html>
