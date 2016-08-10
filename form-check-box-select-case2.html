@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/result-light.css">
+<style type="text/css"></style>
+<title>SO - 25300757 by arunpjohny</title>
+<script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+jQuery(function ($) {
+    //clicking the parent checkbox should check or uncheck all child checkboxes
+    $(".parentCheckBox").click(function () {
+        $(this).closest('fieldset').find('.childCheckBox').prop('checked', this.checked);
+    });
+    //clicking the last unchecked or checked checkbox should check or uncheck the parent checkbox
+    $('.childCheckBox').click(function () {
+        var $fs = $(this).closest('fieldset');
+        $fs.find('.parentCheckBox').prop('checked', !$fs.find('.childCheckBox').is(':not(:checked)'))
+    });
+});
+});//]]> 
+
+</script>
+</head>
+
+<body>
+<fieldset>
+  <label>
+    <input type="checkbox" name="parent1[]" class="parentCheckBox">
+    Parent</label>
+  <label>
+    <input type="checkbox" name="parent1[]" class="childCheckBox">
+    Child 1</label>
+  <label>
+    <input type="checkbox" name="parent1[]" class="childCheckBox">
+    Child 2</label>
+</fieldset>
+<fieldset>
+  <label>
+    <input type="checkbox" name="parent2[]" class="parentCheckBox">
+    Parent</label>
+  <label>
+    <input type="checkbox" name="parent2[]" class="childCheckBox">
+    Child 1</label>
+  <label>
+    <input type="checkbox" name="parent2[]" class="childCheckBox">
+    Child 2</label>
+</fieldset>
+</body>
+</html>

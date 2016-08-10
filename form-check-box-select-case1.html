@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+<style type="text/css"></style>
+<title></title>
+<script type="text/javascript">//<![CDATA[
+function fnTest(check){
+
+    if($(check).is(':checked')){
+        $(check).siblings('.example:first').find('.child').prop("checked",true);
+    }
+    else{
+        $(check).siblings('.example:first').find('.child').prop("checked",false);        
+    }
+  }
+//]]> 
+</script>
+</head>
+
+<body>
+<ul class="test_ex">
+  <li>
+    <input type="checkbox" id="chckBox" class="parent" onchange="fnTest(this);" />
+    <a class="ref">Fruits</a>
+    <ul class="example">
+      <li>
+        <input type="checkbox" id="chckBox" class="child" />
+        <a class="ref"> Apple </a> </li>
+      <li>
+        <input type="checkbox" id="chckBox" class="child" />
+        <a class="ref"> Orange </a> </li>
+    </ul>
+    <ul class="test_ex_sample">
+      <li>
+        <input type="checkbox" id="chckBox" class="parent" onchange="fnTest(this);" />
+        <a class="ref">Birds</a>
+        <ul class="example">
+          <li>
+            <input type="checkbox" id="chckBox" class="child" />
+            <a class="ref"> Peacock </a> </li>
+          <li>
+            <input type="checkbox" id="chckBox" class="child" />
+            <a class="ref">Parrot </a> </li>
+        </ul>
+        <ul class="example">
+          <li>
+            <input type="checkbox" id="chckBox" class="parent" onchange="fnTest(this);" />
+            <a class="ref"> Food </a>
+            <ul class="example">
+              <li>
+                <input type="checkbox" id="chckBox" class="child" />
+                <a class="ref">Bread </a> </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

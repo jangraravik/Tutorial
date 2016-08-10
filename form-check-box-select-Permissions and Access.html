@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Set Permissions and Access</title>
+<style>
+#permission_list {list-style: none;}
+#permission_list li {padding: 5px;}
+#permission_list ul li {padding-left: 20px;padding-bottom: 0px;list-style: none;}
+#permission_list input {top: 3px;}
+#employee_permission_info {float: left;width: 47%;margin-left: 5px;padding: 5px;}
+#employee_permission_info p {font-weight: bold;}
+#employee_permission_info span.small {font-style: italic;font-size: 80%;}
+</style>
+</head>
+
+<body>
+<fieldset id="employee_permission_info">
+  <legend>Employee Permissions and Access</legend>
+  <p>Check the boxes below to grant access to modules</p>
+  <ul id="permission_list">
+    <li>
+      <input name="grants[]" value="customers" checked="checked" class="module" type="checkbox">
+      <span class="medium">Customers:</span> <span class="small">Add, Update, Delete, and Search customers</span> </li>
+    <li>
+      <input name="grants[]" value="items" class="module" type="checkbox">
+      <span class="medium">Items:</span> <span class="small">Add, Update, Delete, and Search items</span>
+      <ul>
+        <li>
+          <input disabled="" name="grants[]" value="items_stock" type="checkbox">
+          <span class="medium">stock</span> </li>
+      </ul>
+    </li>
+    <li>
+      <input name="grants[]" value="item_kits" checked="checked" class="module" type="checkbox">
+      <span class="medium">Item Kits:</span> <span class="small">Add, Update, Delete and Search Item Kits</span> </li>
+    <li>
+      <input name="grants[]" value="suppliers" class="module" type="checkbox">
+      <span class="medium">Suppliers:</span> <span class="small">Add, Update, Delete, and Search suppliers</span> </li>
+    <li>
+      <input name="grants[]" value="reports" checked="checked" class="module" type="checkbox">
+      <span class="medium">Reports:</span> <span class="small">View and generate reports</span>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_categories" checked="checked" class="module" type="checkbox">
+          <span class="medium">Categories</span> 
+          <ul>
+            <li>
+              <input name="grants[]" value="reports_categories_create" type="checkbox">
+              <span class="medium">Create</span> </li>
+          </ul>
+          <ul>
+            <li>
+              <input name="grants[]" value="reports_categories_update" type="checkbox">
+              <span class="medium">Update</span> </li>
+          </ul>
+          <ul>
+            <li>
+              <input name="grants[]" value="reports_categories_delete" type="checkbox">
+              <span class="medium">Delete</span> </li>
+          </ul>          
+          </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_customers" checked="checked" type="checkbox">
+          <span class="medium">Customers</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_discounts" type="checkbox">
+          <span class="medium">Discounts</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_employees" type="checkbox">
+          <span class="medium">Employees</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_inventory" type="checkbox">
+          <span class="medium">Inventory</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_items" type="checkbox">
+          <span class="medium">Items</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_payments" type="checkbox">
+          <span class="medium">Payments</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_receivings" type="checkbox">
+          <span class="medium">Receivings</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_sales" type="checkbox">
+          <span class="medium">Sale</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_suppliers" type="checkbox">
+          <span class="medium">Suppliers</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="reports_taxes" type="checkbox">
+          <span class="medium">Taxes</span> </li>
+      </ul>
+    </li>
+    <li>
+      <input name="grants[]" value="receivings" class="module" type="checkbox">
+      <span class="medium">Receivings:</span> <span class="small">Process Purchase orders</span>
+      <ul>
+        <li>
+          <input disabled="" name="grants[]" value="receivings_stock" type="checkbox">
+          <span class="medium">stock</span> </li>
+      </ul>
+    </li>
+    <li>
+      <input name="grants[]" value="sales" class="module" type="checkbox">
+      <span class="medium">Sales:</span> <span class="small">Process sales and returns</span>
+      <ul>
+        <li>
+          <input disabled="" name="grants[]" value="sales_stock" type="checkbox">
+          <span class="medium">stock</span> </li>
+      </ul>
+    </li>
+    <li>
+      <input name="grants[]" value="employees" class="module" type="checkbox">
+      <span class="medium">Employees:</span> <span class="small">Add, Update, Delete, and Search employees</span>
+      <ul>
+        <li>
+          <input name="grants[]" value="employees_create" type="checkbox">
+          <span class="medium">Create</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="employees_update" type="checkbox">
+          <span class="medium">Update</span> </li>
+      </ul>
+      <ul>
+        <li>
+          <input name="grants[]" value="employees_delete" type="checkbox">
+          <span class="medium">Delete</span> </li>
+      </ul>
+    </li>
+    <li>
+      <input name="grants[]" value="giftcards" class="module" type="checkbox">
+      <span class="medium">Gift Cards:</span> <span class="small">Manage Gift cards</span> </li>
+    <li>
+      <input name="grants[]" value="config" class="module" type="checkbox">
+      <span class="medium">Store Config:</span> <span class="small">Manage Store's configuration</span> </li>
+  </ul>
+  <input name="submit" value="Submit" id="submit" class="submit_button float_right" type="submit">
+</fieldset>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("ul#permission_list > li > input[name='grants[]']").each(function(){
+	var $this = $(this);
+		$("ul > li > input", $this.parent()).each(function(){
+			var $that = $(this);
+			var updateCheckboxes = function (checked){
+				$that.prop("disabled", !checked);
+				!checked && $that.prop("checked", false);
+			}
+			
+		   $this.change(function() {
+				updateCheckboxes($this.is(":checked"));
+			});
+			updateCheckboxes($this.is(":checked"));
+		});
+	});
+	
+	
+});
+</script>
+
+</html>
