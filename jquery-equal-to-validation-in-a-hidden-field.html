@@ -1,0 +1,73 @@
+<style>
+#captchacode {
+    background: url(image/captcha_br_pattern.png);
+    color: #3c7ead;
+    border: 1px solid #dedbc9;
+    height: 36px !important;
+    display: inline-block;
+    width: 132px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 25px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+}
+</style>
+
+
+
+<form id=""#postReviewForm"">
+	
+	<span id="captchacode" unselectable="on" onselectstart="return false;" onmousedown="return false;">CAPTCHA CODE</span>
+	<img style="cursor:pointer;position:relative;top:-5px;left:10px;" onClick="token()" src="<?php echo base_url('image/captcha_refresh.png'); ?>">
+	
+	<input id="valCaptchaCode" type="hidden" />
+	<input id="valCaptcha" type="text" placeholder="Enter above Captcha code" name="valCaptcha">
+	
+	<button id="postReview" name="action" type="button">Post Review</button>
+	
+</form>
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.validate.min.js"></script>
+<script type="text/javascript"> 
+
+	function token(){
+		var chars = "23456789ABCDEFGHJKLMNPQRSTUVWXTZabcdefghikmnpqrstuvwxyz";
+		var string_length = 6;
+		var token = '';
+		for (var i=0; i<string_length; i++) {
+			var rnum = Math.floor(Math.random() * chars.length);
+			token += chars.substring(rnum,rnum+1);
+		}
+		$('#captchacode').text(token);
+		$('#valCaptchaCode').val(token);
+	}
+	
+$(document).ready(function() {
+	token() // so that captcah code get printed in span#captchacode and hidden#valCaptchaCode field.
+	
+	$("body").on("click", "#postReviewForm", function(){
+		$("#postReviewForm").validate({
+			rules: {
+				valCaptcha:{
+					required: true,
+					equalTo: '#valCaptchaCode'
+				}
+			},
+			messages:{
+				valCaptcha: 
+					{
+						required: "Correct captcha is required",
+						equalTo: "Invalid Captcha Try Again"
+					}
+			},
+			onkeyup: true
+		});
+	});	
+});
+</script>
