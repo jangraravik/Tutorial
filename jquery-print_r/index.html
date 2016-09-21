@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery Print_r</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="jquery.print_r.js"></script>
+<script>
+$(document).ready(function() {
+
+ var data = [{'id':1,'name':'hello'},'world','world1','world3','world4'];
+ $('#print_r').print_r(data);
+
+});
+</script>
+</head>
+
+<body>
+<p id="print_r"></p>
+</body>
+</html>
